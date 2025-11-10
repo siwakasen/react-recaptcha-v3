@@ -36,9 +36,9 @@ jobs:
       - name: Log in to Registry
         if: env.skip == 'false'
         run: |
-          echo ${{ secrets.REGISTRY_TOKEN }} | docker login \
+          echo ${{ secrets.REGISTRY_PASSWORD }} | docker login \
             -u ${{ secrets.REGISTRY_USER }} \
-          --password-stdin ${{ secrets.REGISTRY_URL }}
+          --password-stdin ${{ secrets.r }}
 
       - name: Build and push image
         if: |
