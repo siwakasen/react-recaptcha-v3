@@ -51,7 +51,7 @@ jobs:
 
       
       - name: Logout from Registry
-        if: env.skip == 'false'
+        if: always()
         run: |
           docker logout
 
