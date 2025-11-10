@@ -29,9 +29,10 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN \
-    if [ -f yarn.lock ]; then yarn run build; \
-    elif [ -f package-lock.json ]; then npm run build; \
-    else echo "Lockfile not found." && exit 1; \
+    if [ -f package-lock.json ]; then \
+    npm ci && npm run build; \
+    else \
+    npm install && npm run build; \
     fi
 
 # Production image, copy all the files and run next
