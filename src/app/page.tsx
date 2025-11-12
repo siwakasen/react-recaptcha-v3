@@ -5,6 +5,7 @@ import { envConfig } from "@/configs/env.config";
 import { useRecaptcha } from "@/hooks/use-recaptcha.hook";
 
 export default function RecaptchaForm() {
+  console.log("recaptchaSiteKey", envConfig.recaptchaSiteKey);
   const { execute } = useRecaptcha(envConfig.recaptchaSiteKey);
   const [token, setToken] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
