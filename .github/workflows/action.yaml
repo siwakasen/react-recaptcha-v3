@@ -45,10 +45,9 @@ jobs:
           env.skip == 'false'
         run: |
           IMAGE=${{ secrets.REGISTRY_URL }}/react-recaptcha-v3
-          docker build --progress=plain -f Dockerfile -t $IMAGE:latest -t $IMAGE:sha-${SHORT_SHA} .
+          docker build --progress=plain  --build-arg NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }} -f Dockerfile -t $IMAGE:latest -t $IMAGE:sha-${SHORT_SHA} .
           docker push $IMAGE:latest
           docker push $IMAGE:sha-${SHORT_SHA}
-
       
       - name: Logout from Registry
         if: always()
