@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Google reCAPTCHA Token",
-  description: "Google reCAPTCHA Token",
+  title: "reCAPTCHA v3 demo",
+  description: "reCAPTCHA v3 demo",
 };
 
 export default function RootLayout({

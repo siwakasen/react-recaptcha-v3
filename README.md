@@ -20,7 +20,7 @@ For that reason, it’s safer to rely directly on Google’s own script.
 
 ### Demo & Repository
 
-- Live demo: [https://recaptcha.siwakasen.dev](https://recaptcha.siwakasen.dev)  
+- Live demo: [reCAPTCHA v3 demo](https://recaptcha.siwakasen.dev)  
 - reCAPTCHA hook: [`use-recaptcha.hook.ts`](https://github.com/siwakasen/react-recaptcha-v3/blob/master/src/hooks/use-recaptcha.hook.ts)  
 - Enterprise version: [`use-recaptcha-enterprise.hook.ts`](https://github.com/siwakasen/react-recaptcha-v3/blob/master/src/hooks/use-recaptcha-enterprise.hook.ts)  
 - Example page using reCAPTCHA: [`page.tsx`](https://github.com/siwakasen/react-recaptcha-v3/blob/master/src/app/page.tsx)
