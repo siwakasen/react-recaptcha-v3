@@ -21,7 +21,12 @@ jobs:
           COMMIT_MESSAGE=$(git log -1 --pretty=%B)
 
           echo "SHORT_SHA=${SHORT_SHA}" >> $GITHUB_ENV
-          echo "COMMIT_MESSAGE=${COMMIT_MESSAGE}" >> $GITHUB_ENV
+
+          {
+            echo 'COMMIT_MESSAGE<<EOF'
+            echo "${COMMIT_MESSAGE}"
+            echo 'EOF'
+          } >> $GITHUB_ENV
 
       - name: Check for skip keywords
         id: skip-check
@@ -48,9 +53,8 @@ jobs:
           docker build --progress=plain  --build-arg NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }} -f Dockerfile -t $IMAGE:latest -t $IMAGE:sha-${SHORT_SHA} .
           docker push $IMAGE:latest
           docker push $IMAGE:sha-${SHORT_SHA}
-      
+
       - name: Logout from Registry
         if: always()
         run: |
           docker logout
-
