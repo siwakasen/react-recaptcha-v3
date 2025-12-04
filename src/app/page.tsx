@@ -23,7 +23,7 @@ export default function RecaptchaForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-950 px-4">
+    <div className="min-h-screen flex flex-col  items-center justify-center bg-zinc-50 dark:bg-zinc-950 px-4">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-sm p-6 rounded-xl shadow-md bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800"
@@ -58,6 +58,15 @@ export default function RecaptchaForm() {
           </div>
         )}
       </form>
+      <div className="mt-2">
+        source code:{" "}
+        <a
+          href="https://github.com/siwakasen/react-recaptcha-v3"
+          className="underline text-blue-400"
+        >
+          react-recaptcha-v3
+        </a>
+      </div>
     </div>
   );
 }
